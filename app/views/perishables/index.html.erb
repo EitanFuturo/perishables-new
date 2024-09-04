@@ -1,0 +1,47 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Perishables" %>
+
+<h1>Perishables</h1>
+
+<h2>Expired</h2>
+<div id="expired">
+  <% @perishables.expired.each do |perishable| %>
+    <%= render perishable %>
+    <p>
+      <%= link_to "Show this perishable", perishable %>
+    </p>
+  <% end %>
+</div>
+
+<h2>Less than 3 days to expire</h2>
+<div id="about-to-expire">
+  <% @perishables.about_to_expire.each do |perishable| %>
+    <%= render perishable %>
+    <p>
+      <%= link_to "Show this perishable", perishable %>
+    </p>
+  <% end %>
+</div>
+
+<h2>Soon to expire</h2>
+<div id="soon-to-expire">
+  <% @perishables.soon_to_expire.each do |perishable| %>
+    <%= render perishable %>
+    <p>
+      <%= link_to "Show this perishable", perishable %>
+    </p>
+  <% end %>
+</div>
+
+<h2>Fresh!</h2>
+<div id="fresh">
+  <% @perishables.fresh.each do |perishable| %>
+    <%= render perishable %>
+    <p>
+      <%= link_to "Show this perishable", perishable %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New perishable", new_perishable_path %>

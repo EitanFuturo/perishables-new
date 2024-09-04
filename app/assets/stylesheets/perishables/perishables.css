@@ -1,0 +1,15 @@
+#expired {
+    background-color: red;
+}
+
+#about-to-expire {
+    background-color: orange;
+}
+
+#soon-to-expire {
+    background-color: yellow;
+}
+
+#fresh {
+    background-color: green;
+}

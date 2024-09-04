@@ -1,0 +1,12 @@
+<% content_for :title, "Editing perishable" %>
+
+<h1>Editing perishable</h1>
+
+<%= render "form", perishable: @perishable %>
+
+<br>
+
+<div>
+  <%= link_to "Show this perishable", @perishable %> |
+  <%= link_to "Back to perishables", perishables_path %>
+</div>

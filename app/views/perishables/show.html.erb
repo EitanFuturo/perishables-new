@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @perishable %>
+
+<div>
+  <%= link_to "Edit this perishable", edit_perishable_path(@perishable) %> |
+  <%= link_to "Back to perishables", perishables_path %>
+
+  <%= button_to "Destroy this perishable", @perishable, method: :delete %>
+</div>

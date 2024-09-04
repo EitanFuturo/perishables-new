@@ -1,0 +1,11 @@
+<% content_for :title, "New perishable" %>
+
+<h1>New perishable</h1>
+
+<%= render "form", perishable: @perishable %>
+
+<br>
+
+<div>
+  <%= link_to "Back to perishables", perishables_path %>
+</div>
