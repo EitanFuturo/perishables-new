@@ -2,46 +2,63 @@
 
 <% content_for :title, "Perishables" %>
 
-<h1>Perishables</h1>
+<section class="hero">
+  <div class="hero-body">
+    <h1 class="title">Perishables</h1>
+  </div>
+</section>
 
-<h2>Expired</h2>
-<div id="expired">
-  <% @perishables.expired.each do |perishable| %>
-    <%= render perishable %>
-    <p>
-      <%= link_to "Show this perishable", perishable %>
-    </p>
-  <% end %>
-</div>
+<% if @perishables.expired.any? %>
+    <div id="expired" class="section">
+      <h2 class="subtitle">Expired</h2>
+      <% @perishables.expired.each do |perishable| %>
+        <%= render perishable %>
+        <p>
+          <%= link_to "Show this perishable", perishable %>
+        </p>
+      <% end %>
+    </div>
+<% end %>
 
-<h2>Less than 3 days to expire</h2>
-<div id="about-to-expire">
-  <% @perishables.about_to_expire.each do |perishable| %>
-    <%= render perishable %>
-    <p>
-      <%= link_to "Show this perishable", perishable %>
-    </p>
-  <% end %>
-</div>
+<% if @perishables.about_to_expire.any? %>
+  <div id="about-to-expire" class="section">
+    <h2 class="subtitle">Less than 3 days to expire</h2>
+    <% @perishables.about_to_expire.each do |perishable| %>
+      <%= render perishable %>
+      <p>
+        <%= link_to "Show this perishable", perishable %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
 
-<h2>Soon to expire</h2>
-<div id="soon-to-expire">
-  <% @perishables.soon_to_expire.each do |perishable| %>
-    <%= render perishable %>
-    <p>
-      <%= link_to "Show this perishable", perishable %>
-    </p>
-  <% end %>
-</div>
+<% if @perishables.soon_to_expire.any? %>
+  <div id="soon-to-expire" class="section">
+    <h2 class="subtitle">Soon to expire</h2>
+    <% @perishables.soon_to_expire.each do |perishable| %>
+      <%= render perishable %>
+      <p>
+        <%= link_to "Show this perishable", perishable %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
 
-<h2>Fresh!</h2>
-<div id="fresh">
-  <% @perishables.fresh.each do |perishable| %>
-    <%= render perishable %>
-    <p>
-      <%= link_to "Show this perishable", perishable %>
-    </p>
-  <% end %>
-</div>
+<% if @perishables.fresh.any? %>
+  <div id="fresh" class="section">
+    <h2 class="subtitle">Fresh!</h2>
 
-<%= link_to "New perishable", new_perishable_path %>
+    <% @perishables.fresh.each do |perishable| %>
+      <%= render perishable %>
+      <p>
+        <%= link_to "Show this perishable", perishable %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
+
+<section class="hero">
+  <div class="hero-body">
+    <%= link_to "New perishable", new_perishable_path, class: 'button is-info' %>
+  </div>
+</section>
